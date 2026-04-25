@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title id="page-title">Las aventuras de Sir Valentin</title>
+    <link rel="stylesheet" href="./styles.css?v=20260420-debug1" />
+  </head>
+  <body>
+    <aside id="debug-panel" class="debug-panel">
+      <div class="debug-title">Debug</div>
+      <div id="debug-state" class="debug-state">Esperando...</div>
+      <button id="debug-toggle-button" class="debug-toggle-button" type="button">Ocultar debug</button>
+    </aside>
+    <main class="app-shell">
+      <section id="screen-title" class="screen screen-active">
+        <div class="panel title-panel">
+          <p class="eyebrow">Pixel fantasy runner</p>
+          <h1 id="title-heading">Las aventuras de Sir Valentin</h1>
+          <p id="title-lead" class="lead">
+            Sir Valentin debe correr hasta el castillo, reunir llaves doradas, rescatar a Princesa Mimi
+            y escapar de Dragon Gata hasta la aldea segura.
+          </p>
+          <div class="skin-picker">
+            <span class="skin-label">Personaje de Sir Valentin: <strong id="valentin-skin-label">Sir Valentin</strong></span>
+            <button id="valentin-skin-button" class="stone-button stone-button-secondary" type="button">Cambiar personaje</button>
+          </div>
+          <div class="skin-picker">
+            <span class="skin-label">Personaje de Mimi: <strong id="mimi-skin-label">Princesa Mimi</strong></span>
+            <button id="mimi-skin-button" class="stone-button stone-button-secondary" type="button">Cambiar personaje</button>
+          </div>
+          <div class="skin-picker">
+            <span class="skin-label">Personaje de Dragon Gata: <strong id="dragon-skin-label">Dragon Gata</strong></span>
+            <button id="dragon-skin-button" class="stone-button stone-button-secondary" type="button">Cambiar personaje</button>
+          </div>
+          <button id="play-button" class="stone-button">Jugar</button>
+        </div>
+        <div class="title-art">
+          <div class="art-card">
+            <canvas id="title-art-canvas" width="520" height="360" aria-label="Arte del menu"></canvas>
+            <p id="title-caption">Sir Valentin corre hacia el castillo mientras Dragon Gata acecha</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="screen-story" class="screen">
+        <div class="panel story-panel">
+          <h2 id="story-heading">¡Sir Valentin, corre!</h2>
+          <p id="story-copy">Sir Valentin ve el castillo a lo lejos y empieza la persecución para salvar a Princesa Mimi.</p>
+        </div>
+      </section>
+
+      <section id="screen-game" class="screen">
+        <div class="hud">
+          <div class="hud-left">
+            <div class="hud-chip">Vida: <span id="lives-label">1</span></div>
+            <div class="hud-chip">Llaves: <span id="keys-label">0/3</span></div>
+            <div class="hud-chip">Tiempo: <span id="time-label">180</span>s</div>
+          </div>
+          <div class="hud-center">
+            <div class="danger-wrap">
+              <span id="danger-name">Dragon Gata</span>
+              <div class="danger-track">
+                <div id="danger-fill" class="danger-fill"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hud-right">
+            <div class="hud-chip">Fase: <span id="phase-label">Bosque brillante</span></div>
+          </div>
+        </div>
+
+        <div class="canvas-wrap">
+          <canvas id="game-canvas" width="1280" height="720" aria-label="Juego de Sir Valentin"></canvas>
+          <div id="toast" class="toast hidden"></div>
+          <div id="subtitle" class="subtitle hidden"></div>
+        </div>
+
+        <div class="controls">
+          <button id="jump-button" class="action-button">
+            <span class="icon">↑</span>
+            <span>Saltar</span>
+          </button>
+          <button id="hide-button" class="action-button action-button-disabled">
+            <span class="icon">↓</span>
+            <span>Esconder</span>
+          </button>
+          <button id="speed-button" class="action-button action-button-disabled">
+            <span class="icon">←</span>
+            <span class="action-label">Escudo</span>
+          </button>
+          <button id="coin-button" class="action-button">
+            <span class="icon">→</span>
+            <span>Moneda</span>
+          </button>
+        </div>
+      </section>
+
+      <section id="screen-castle" class="screen">
+        <div class="panel castle-panel">
+          <h2>El castillo</h2>
+          <div class="panel-art-layout">
+            <div class="side-art-card">
+              <canvas id="wizard-art-canvas" width="260" height="300" aria-label="Mago Manuel"></canvas>
+            </div>
+            <div class="panel-art-content">
+              <div id="castle-scene-copy" class="castle-copy"></div>
+              <div id="castle-actions" class="castle-actions"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="screen-quiz" class="screen">
+        <div class="panel quiz-panel">
+          <div class="panel-art-layout">
+            <div class="side-art-card">
+              <canvas id="quiz-wizard-art-canvas" width="260" height="300" aria-label="Mago Manuel"></canvas>
+            </div>
+            <div class="panel-art-content">
+              <h2>Mago Manuel</h2>
+              <p id="quiz-line" class="wizard-line">¡Resuelve mis acertijos, valiente caballero!</p>
+              <div id="quiz-progress" class="quiz-progress"></div>
+              <div id="quiz-question" class="quiz-question"></div>
+              <div id="quiz-answers" class="quiz-answers"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="screen-gameover" class="screen">
+        <div class="panel end-panel">
+          <h2>Game Over</h2>
+          <p id="gameover-copy">Dragon Gata atrapó a Sir Valentin antes de que pudiera completar su misión.</p>
+          <button id="back-title-button" class="stone-button">Volver al título</button>
+        </div>
+      </section>
+
+      <section id="screen-win" class="screen">
+        <div class="panel end-panel win-panel">
+          <h2 id="win-heading">¡You saved Princesa Mimi!</h2>
+          <p id="win-copy">Sir Valentin y Princesa Mimi llegaron a la puerta de la aldea mientras Dragon Gata huía.</p>
+          <div class="art-card end-art-card">
+            <canvas id="win-art-canvas" width="520" height="250" aria-label="Escena final"></canvas>
+          </div>
+          <p id="continue-text-inline" class="continue-text continue-text-inline continue-text-hidden">Continuará</p>
+          <button id="play-again-button" class="stone-button stone-button-secondary" type="button">Volver a jugar</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="./game.js?v=20260420-debug1"></script>
+  </body>
+</html>
