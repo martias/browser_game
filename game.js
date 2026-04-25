@@ -177,7 +177,7 @@ const zoneLabels = {
 let lastTime = performance.now();
 let audioEnabled = false;
 let continueTextTimeoutId = null;
-let debugCollapsed = false;
+let debugCollapsed = true;
 let lastDebugError = "";
 
 function ensureAudio() {

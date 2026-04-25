@@ -3,14 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#17213f" />
     <title id="page-title">Las aventuras de Sir Valentin</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="./icons/icon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
+    <link rel="manifest" href="./manifest.webmanifest" />
     <link rel="stylesheet" href="./styles.css?v=20260420-debug1" />
   </head>
   <body>
-    <aside id="debug-panel" class="debug-panel">
+    <aside id="debug-panel" class="debug-panel debug-panel-collapsed">
       <div class="debug-title">Debug</div>
       <div id="debug-state" class="debug-state">Esperando...</div>
-      <button id="debug-toggle-button" class="debug-toggle-button" type="button">Ocultar debug</button>
+      <button id="debug-toggle-button" class="debug-toggle-button" type="button">Mostrar debug</button>
     </aside>
     <main class="app-shell">
       <section id="screen-title" class="screen screen-active">

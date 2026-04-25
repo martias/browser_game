@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Las aventuras de Sir Valentin">
+  <rect width="512" height="512" rx="96" fill="#17213f"/>
+  <rect x="48" y="344" width="416" height="82" fill="#31564b"/>
+  <rect x="72" y="382" width="368" height="48" fill="#263b34"/>
+
+  <path d="M116 280h280v118H116z" fill="#7e5fb5"/>
+  <path d="M146 212h64v186h-64zM302 212h64v186h-64z" fill="#6f50a4"/>
+  <path d="M116 280l140-112 140 112z" fill="#9f77d1"/>
+  <path d="M256 168l-140 112h280z" fill="#c495e6" opacity=".34"/>
+  <path d="M146 212l32-46 32 46zM302 212l32-46 32 46z" fill="#f0c45b"/>
+  <rect x="228" y="318" width="56" height="80" rx="24" fill="#221b32"/>
+  <rect x="160" y="306" width="38" height="42" rx="10" fill="#261d42"/>
+  <rect x="314" y="306" width="38" height="42" rx="10" fill="#261d42"/>
+
+  <path d="M256 246c46 20 82 22 112 9v57c0 60-36 104-112 132-76-28-112-72-112-132v-57c30 13 66 11 112-9z" fill="#f6d265"/>
+  <path d="M256 276c30 13 54 14 74 6v31c0 39-23 67-74 88-51-21-74-49-74-88v-31c20 8 44 7 74-6z" fill="#ec8a3c"/>
+  <path d="M256 246c46 20 82 22 112 9v57c0 60-36 104-112 132z" fill="#e3b44f" opacity=".38"/>
+
+  <circle cx="350" cy="150" r="30" fill="#f6d265"/>
+  <rect x="222" y="138" width="122" height="30" rx="15" fill="#f6d265"/>
+  <rect x="222" y="125" width="36" height="56" rx="18" fill="#f6d265"/>
+  <rect x="338" y="138" width="70" height="24" rx="12" fill="#f6d265"/>
+  <rect x="392" y="126" width="22" height="48" rx="11" fill="#f6d265"/>
+
+  <circle cx="386" cy="91" r="16" fill="#fff1b8"/>
+  <circle cx="112" cy="128" r="12" fill="#fff1b8"/>
+  <circle cx="424" cy="248" r="10" fill="#fff1b8"/>
+</svg>
